@@ -4,26 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Abetech TradeX — Master the Markets</title>
+<meta name="description" content="Abetech TradeX is a trading education platform for stocks, options, and crypto with structured learning tracks, live sessions, and community support.">
+<meta property="og:title" content="Abetech TradeX — Master the Markets">
+<meta property="og:description" content="Structured trading education for stocks, options, and crypto.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --navy: #0b1e3d;
-  --navy2: #122649;
-  --teal: #0e8f7c;
-  --teal2: #12b09a;
-  --teal3: #e6f7f5;
-  --gold: #e8a020;
-  --gold2: #f5b840;
-  --cream: #faf8f4;
-  --cream2: #f2efe9;
+  --navy: #0f172a;
+  --navy2: #1e293b;
+  --teal: #2563eb;
+  --teal2: #60a5fa;
+  --teal3: #e0ecff;
+  --gold: #f97316;
+  --gold2: #fb923c;
+  --cream: #f8fafc;
+  --cream2: #eef2ff;
   --white: #ffffff;
-  --text: #1a1a2e;
-  --text2: #3d4a5c;
-  --muted: #7a8799;
-  --border: #dde3eb;
-  --shadow: 0 4px 24px rgba(11,30,61,0.09);
-  --shadow2: 0 12px 48px rgba(11,30,61,0.14);
+  --text: #0f172a;
+  --text2: #334155;
+  --muted: #64748b;
+  --border: #dbe3ef;
+  --shadow: 0 4px 24px rgba(15,23,42,0.09);
+  --shadow2: 0 12px 48px rgba(15,23,42,0.14);
   --mono: 'JetBrains Mono', monospace;
   --display: 'Playfair Display', serif;
   --body: 'Plus Jakarta Sans', sans-serif;
@@ -65,7 +69,7 @@ nav {
 /* HERO */
 .hero {
   min-height: 100vh;
-  background: linear-gradient(160deg, var(--navy) 0%, var(--navy2) 55%, #0d3060 100%);
+  background: linear-gradient(160deg, var(--navy) 0%, var(--navy2) 55%, #1d4ed8 100%);
   display: flex; align-items: center;
   padding: 120px 60px 80px; position: relative; overflow: hidden;
 }
@@ -317,7 +321,7 @@ textarea.form-input { resize: vertical; min-height: 100px; }
 .perk p { font-size: 13px; color: var(--text2); line-height: 1.5; }
 
 /* CTA */
-.cta-banner { background: linear-gradient(135deg, var(--teal) 0%, #0a7a6a 100%); padding: 80px 60px; text-align: center; position: relative; overflow: hidden; }
+.cta-banner { background: linear-gradient(135deg, var(--teal) 0%, #1d4ed8 100%); padding: 80px 60px; text-align: center; position: relative; overflow: hidden; }
 .cta-banner::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 28px 28px; }
 .cta-banner h2 { font-family: var(--display); font-size: clamp(36px, 4vw, 56px); font-weight: 900; color: white; margin-bottom: 16px; position: relative; }
 .cta-banner p { font-size: 18px; color: rgba(255,255,255,0.8); margin-bottom: 40px; position: relative; }
@@ -347,9 +351,33 @@ footer { background: var(--navy); padding: 72px 60px 40px; }
 .reveal-delay-1 { transition-delay: 0.1s; }
 .reveal-delay-2 { transition-delay: 0.2s; }
 .reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ACCESSIBILITY */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 10px;
+  background: var(--navy);
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  z-index: 1000;
+  text-decoration: none;
+}
+.skip-link:focus { left: 10px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main-content">Skip to main content</a>
 
 <nav>
   <a class="nav-logo" href="#">
@@ -365,7 +393,7 @@ footer { background: var(--navy); padding: 72px 60px 40px; }
   <a href="#contact" class="nav-cta">Start Your Journey</a>
 </nav>
 
-<section class="hero">
+<section class="hero" id="main-content">
   <div class="hero-bg-dots"></div>
   <div class="hero-glow1"></div>
   <div class="hero-glow2"></div>
@@ -605,18 +633,20 @@ footer { background: var(--navy); padding: 72px 60px 40px; }
       <div class="contact-form reveal">
         <div class="form-title">Start your journey today</div>
         <div class="form-sub">Get in touch and learn more about our programs. We'll respond within 24 hours.</div>
-        <div class="form-row">
-          <div class="form-group"><label class="form-label">First Name</label><input type="text" class="form-input" placeholder="John"></div>
-          <div class="form-group"><label class="form-label">Last Name</label><input type="text" class="form-input" placeholder="Doe"></div>
-        </div>
-        <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="john@example.com"></div>
-        <div class="form-group"><label class="form-label">Phone (optional)</label><input type="tel" class="form-input" placeholder="+1 (555) 000-0000"></div>
-        <div class="form-group">
-          <label class="form-label">Which track interests you most?</label>
-          <select class="form-input"><option value="">Select a track…</option><option>Stock Market</option><option>Options Trading</option><option>Crypto & DeFi</option><option>All Three!</option></select>
-        </div>
-        <div class="form-group"><label class="form-label">Message</label><textarea class="form-input" placeholder="Tell us about your experience and goals…"></textarea></div>
-        <button class="form-submit">Send Message →</button>
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group"><label class="form-label" for="firstName">First Name</label><input id="firstName" name="firstName" type="text" class="form-input" placeholder="John" required></div>
+            <div class="form-group"><label class="form-label" for="lastName">Last Name</label><input id="lastName" name="lastName" type="text" class="form-input" placeholder="Doe" required></div>
+          </div>
+          <div class="form-group"><label class="form-label" for="email">Email Address</label><input id="email" name="email" type="email" class="form-input" placeholder="john@example.com" required></div>
+          <div class="form-group"><label class="form-label" for="phone">Phone (optional)</label><input id="phone" name="phone" type="tel" class="form-input" placeholder="+1 (555) 000-0000"></div>
+          <div class="form-group">
+            <label class="form-label" for="track">Which track interests you most?</label>
+            <select id="track" name="track" class="form-input" required><option value="">Select a track…</option><option>Stock Market</option><option>Options Trading</option><option>Crypto & DeFi</option><option>All Three!</option></select>
+          </div>
+          <div class="form-group"><label class="form-label" for="message">Message</label><textarea id="message" name="message" class="form-input" placeholder="Tell us about your experience and goals…" required></textarea></div>
+          <button class="form-submit" type="submit">Send Message →</button>
+        </form>
       </div>
       <div class="contact-info reveal reveal-delay-2">
         <div class="section-badge">📬 Get In Touch</div>
@@ -630,7 +660,7 @@ footer { background: var(--navy); padding: 72px 60px 40px; }
             <div>
               <h4>Follow on Instagram</h4>
               <p>Daily trading tips, live market breakdowns, and educational content.<br>
-              <a href="https://www.instagram.com/ali.shah0700" target="_blank" style="color:var(--teal);font-weight:600;text-decoration:none">@ali.shah0700 ↗</a></p>
+              <a href="https://www.instagram.com/ali.shah0700" target="_blank" rel="noopener noreferrer" style="color:var(--teal);font-weight:600;text-decoration:none">@ali.shah0700 ↗</a></p>
             </div>
           </div>
         </div>
@@ -656,14 +686,14 @@ footer { background: var(--navy); padding: 72px 60px 40px; }
     </div>
     <div class="footer-col"><h4>Programs</h4><ul><li><a href="#">Stock Market</a></li><li><a href="#">Options Trading</a></li><li><a href="#">Crypto & DeFi</a></li><li><a href="#curriculum">Full Curriculum</a></li></ul></div>
     <div class="footer-col"><h4>Platform</h4><ul><li><a href="#">Paper Simulator</a></li><li><a href="#">Trade Journal</a></li><li><a href="#">Live Sessions</a></li><li><a href="#">Community</a></li></ul></div>
-    <div class="footer-col"><h4>Company</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Blog</a></li><li><a href="#contact">Contact</a></li><li><a href="https://www.instagram.com/ali.shah0700" target="_blank">Instagram</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Blog</a></li><li><a href="#contact">Contact</a></li><li><a href="https://www.instagram.com/ali.shah0700" target="_blank" rel="noopener noreferrer">Instagram</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <span>© 2026 Abetech TradeX. All rights reserved.</span>
     <div class="social-links">
-      <a class="social-link" href="https://www.instagram.com/ali.shah0700" target="_blank">📸</a>
-      <a class="social-link" href="#">🐦</a>
-      <a class="social-link" href="#">▶️</a>
+      <a class="social-link" href="https://www.instagram.com/ali.shah0700" target="_blank" rel="noopener noreferrer" aria-label="Instagram">📸</a>
+      <a class="social-link" href="#" aria-label="X (Twitter)">🐦</a>
+      <a class="social-link" href="#" aria-label="YouTube">▶️</a>
     </div>
     <span>Privacy · Terms · Disclaimers</span>
   </div>
@@ -721,10 +751,13 @@ const obs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-document.querySelector('.form-submit').addEventListener('click', function() {
-  this.textContent = '✓ Message Sent!';
-  this.style.background = '#16a34a';
-  setTimeout(() => { this.textContent = 'Send Message →'; this.style.background = ''; }, 3000);
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const submitButton = this.querySelector('.form-submit');
+  submitButton.textContent = '✓ Message Sent!';
+  submitButton.style.background = '#16a34a';
+  setTimeout(() => { submitButton.textContent = 'Send Message →'; submitButton.style.background = ''; }, 3000);
+  this.reset();
 });
 </script>
 </body>
